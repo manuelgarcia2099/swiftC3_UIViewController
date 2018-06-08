@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var rectangle: RectanguloView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,6 +20,19 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func change(_ sender: UIButton) {
+        
+        let rectangle = sender.superview as! RectanguloView
+        let colorAtributo = rectangle.rectangleColor
+        let colorBackground = rectangle.backgroundColor!
+        
+        rectangle.backgroundColor = colorAtributo
+        rectangle.rectangleColor =  colorBackground
+        
+        
     }
 
 
